@@ -5,7 +5,8 @@ import items from '~/assets/data/pages.json';
 
 <template>
     <div class="global" :class="$style.wrapper">
-        <Thumbnail v-for="item in items" :key="item.link" :title="item.title" :video="item.video" :picture="item.picture"
+        <Thumbnail2 v-for="item in items" :key="item.link" :title="item.title" :video="item.video" :picture="item.picture"
+            :date="item.date"
             :link="item.link" />
     </div>
 </template>
@@ -13,6 +14,9 @@ import items from '~/assets/data/pages.json';
 
 <style module>
 .wrapper {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Espacement entre les colonnes */
 }
 </style>

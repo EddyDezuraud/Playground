@@ -126,6 +126,26 @@ watch(() => route.path, () => {
     align-items: center;
     gap: 5px;
     font-size: 12px;
+    position: relative;
+}
+
+.backLink::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    border-radius: 40px;
+    left: -10px;
+    width: calc(100% + 20px);
+    border: solid 1px white;
+    top: -7px;
+    height: calc(100% + 14px);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.backLink:hover::before {
+    opacity: 0.3;
 }
 
 .backLink svg {
