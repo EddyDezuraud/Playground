@@ -58,13 +58,14 @@ onMounted(() => {
 
 <style module>
 .wrapper {
-    display: block;
-    padding-top: 70px;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 70px;
     box-sizing: border-box;
     position: relative;
 }
@@ -91,11 +92,12 @@ onMounted(() => {
 
 .header {
     position: absolute;
-    top: 20px;
+    top: 100px;
     width: 100%;
     left: 0;
     display: flex;
     justify-content: center;
+    display: none;
 }
 
 .logo {

@@ -14,7 +14,7 @@ const codeTitle = 'code';
 
 <style module>
 .wrapper {
-    padding: 120px 0;
+    padding: 160px 0;
 }
 
 .title {
