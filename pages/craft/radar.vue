@@ -19,7 +19,7 @@ import codes from '~/assets/data/codes/radar.js';
     flex-direction: column;
     gap: 20px;
     position: relative;
-    top: 200px;
+    margin-top: 200px;
 }
 
 .inner {

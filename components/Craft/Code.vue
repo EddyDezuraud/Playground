@@ -17,17 +17,11 @@
                     :class="[$style.tab, { [$style.active]: tabSelected === tab.label }]">
                     {{ tab.label }}
                 </button>
-                <button @click="copy" :class="$style.copyButton">
-                    <copy-icon />
-                </button>
             </div>
             <div :class="$style.codeInner">
-                <CodeBlock :code="'<div>aa</div>'" label="My Code" :highlightjs="true" lang="html" />
+                <!-- <highlight-code lang="vue">{{ code }}</highlight-code> -->
+                <CodeBlock :code="code" :highlightjs="true" lang="html" />
             </div>
-        </div>
-        <ContentDoc path="/element/dropdowns" />
-        <div :class="$style.copied" v-if="copied">
-            <span>Copied !</span>
         </div>
     </div>
 </template>
@@ -42,60 +36,60 @@ const props = defineProps({
     }
 })
 
-const langSelected = ref('vuejs');
+const langSelected = ref('');
 const tabSelected = ref('');
-const copied = ref(false);
 
 const currentLang = computed(() => {
-    const index = props.codes?.findIndex((el) => el.lang === langSelected)
+    const index = props.codes?.findIndex((el) => el.lang === langSelected.value)
     return props.codes[index];
 })
 
 const code = computed(() => {
-    if (!currentLang || !currentLang.tabs) return ''
-    const index = currentLang?.tabs.findIndex((el) => el.label === tabSelected)
+    if (!currentLang.value || !currentLang.value.tabs) return '';
+    const index = currentLang.value?.tabs.findIndex((el) => el.label === tabSelected.value)
     if (index > -1) {
-        return currentLang.tabs[index].code;
+        return currentLang.value.tabs[index].code;
     }
     return '';
 })
 
 const onActiveLang = (type) => {
-    langSelected = type.lang;
+    langSelected.value = type.lang;
     const index = type.tabs.findIndex((el) => el.default === true);
 
     if (index > -1) {
-        tabSelected = type.tabs[index].label;
+        tabSelected.value = type.tabs[index].label;
     }
 };
 
-const copy = async () => {
-    try {
-        await navigator.clipboard.writeText(code);
-        copied = true;
-
-        window.setTimeout(
-            function () {
-                copied = false
-            }.bind(this), 2000);
-    } catch ($e) {
-        alert('Cannot copy', $e);
+onMounted(() => {
+    if (!tabSelected.value && props.codes) {
+        if (props.codes[0] && props.codes[0].tabs && props.codes[0].tabs[0]) {
+            langSelected.value = props.codes[0].lang;
+            tabSelected.value = props.codes[0].tabs[0].label;
+        }
     }
-}
+})
 </script>
 
+
 <style lang="scss" module>
+:global(pre[class*=language-]) {
+    background: #120e1e !important;
+    border: none !important;
+}
+
 .wrapper {
     display: block;
     margin-top: 40px;
     padding-top: 40px;
-    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    border-top: solid 1px rgba(255, 255, 255, 0.05);
 }
 
 .codeInner {
-    overflow: auto;
-    max-height: 400px;
-    padding: 0 15px;
+    // overflow: auto;
+    // max-height: 400px;
+    // padding: 0 15px;
 
     /* width */
     &::-webkit-scrollbar {
@@ -121,7 +115,7 @@ const copy = async () => {
 }
 
 .inner {
-    background: #212122;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 5px;
     font-size: 14px;

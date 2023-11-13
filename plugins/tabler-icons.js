@@ -1,4 +1,5 @@
-import Vue from "vue";
 import VueTablerIcons from "vue-tabler-icons";
 
-Vue.use(VueTablerIcons);
+export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.vueApp.use(VueTablerIcons)
+})

@@ -6,14 +6,16 @@ export default defineNuxtConfig({
   },
   ssr: false,
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+    }
   },
   css: [
     '~/assets/css/dracula.css'
   ],
   plugins: [
-    '~/plugins/tabler-icons.js',
-    '~/plugins/highlight.js'
+    '~/plugins/tabler-icons.js'
   ],
   modules: ["@nuxt/content"],
   content: {
