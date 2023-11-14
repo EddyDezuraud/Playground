@@ -6,6 +6,7 @@ const onChangeState = ref(false);
 let timerA = null;
 let timerB = null;
 const init = ref(false);
+const blur = ref(false);
 
 const initPageMode = (firstInit) => {
     let newVal = false
@@ -28,11 +29,21 @@ const initPageMode = (firstInit) => {
     }
 
     init.value = true;
-
 }
 
+const handleScroll = () => {
+
+    if (window.scrollY > 200) {
+        blur.value = true;
+    } else {
+        blur.value = false;
+    }
+}
+
+
 onMounted(() => {
-    initPageMode(true)
+    initPageMode(true);
+    window.addEventListener("scroll", handleScroll);
 })
 
 watch(() => route.path, () => {
@@ -42,7 +53,8 @@ watch(() => route.path, () => {
 </script>
 
 <template>
-    <header :class="[$style.wrapper, { [$style.page]: pageMode }, { [$style.removing]: onChangeState }]">
+    <header
+        :class="[$style.wrapper, { [$style.page]: pageMode }, { [$style.removing]: onChangeState }, { [$style.blur]: blur }]">
         <div v-if="init" class="global" :class="$style.inner">
             <nuxt-link to="/" :class="[$style.backLink, $style.pageOnly]">
                 <svg viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -52,7 +64,9 @@ watch(() => route.path, () => {
                     <path d="M5 12l4 4"></path>
                     <path d="M5 12l4 -4"></path>
                 </svg>
-                Back to the playgrounds
+                <span>
+                    Back to the playgrounds
+                </span>
             </nuxt-link>
             <img :class="[$style.logoSmallImg, $style.pageOnly]" src="~/assets/images/playground/logo.svg" alt="Playground">
             <nuxt-link to="/" :class="[$style.logo, $style.homeOnly]">
@@ -73,22 +87,44 @@ watch(() => route.path, () => {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 20px;
     width: 100%;
     z-index: 99999;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: backdrop-filter 0.3s;
+}
+
+.blur .inner {
+    backdrop-filter: blur(5px);
 }
 
 .inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px;
+    padding: 20px;
     border-radius: 8px;
-    /* border: solid 1px #FFFFFF10; */
+}
+
+.inner::before {
+    background: rgba(255, 255, 255, 0.05);
+    border: solid 1px #FFFFFF10;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.blur .inner::before {
+    opacity: 1;
 }
 
 .logo {
@@ -101,6 +137,7 @@ watch(() => route.path, () => {
 
 .logoImg {
     width: 60px;
+    margin: -20px 0;
 }
 
 .link {
@@ -189,6 +226,20 @@ watch(() => route.path, () => {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .backLink>span {
+        display: none;
+    }
+
+    .logo {
+        font-size: 10px;
+    }
+
+    .logoImg {
+        width: 30px;
     }
 }
 </style>

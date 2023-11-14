@@ -10,6 +10,9 @@
 </template>
 
 <script>
+useHead({
+    title: "Eddy's Playground - Home of Design and Front-end experiments"
+})
 </script>
 
 <style module>
@@ -40,5 +43,17 @@
     background: radial-gradient(#ffffff, #ffffff00, #ffffff00);
     transform: rotate(25deg);
     filter: blur(50px);
+    animation: haloAnim 3s ease;
+}
+
+@keyframes haloAnim {
+    0% {
+        transform: translateX(-20%) translateY(-2%) rotate(30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%) translateY(0%) rotate(25deg);
+        opacity: 1;
+    }
 }
 </style>

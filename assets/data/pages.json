@@ -4,22 +4,25 @@
         "picture": "radius-master.png",
         "video": "radius-master-2.mp4",
         "title": "Radius Master",
-        "date": "11/12/2023"
+        "date": "11/22/2023 14:24",
+        "online": false
     },
     {
         "link": "space-button",
         "picture": "space-button.png",
         "video": "space-button.mp4",
         "title": "Space button",
-        "date": "11/05/2023",
-        "code": true
+        "date": "11/14/2023 14:35",
+        "code": true,
+        "online": true
     },
     {
         "link": "radar",
         "picture": "radar.png",
         "video": "radar.mp4",
         "title": "Radar",
-        "date": "11/03/2023",
-        "code": true
+        "date": "11/03/2023 14:25",
+        "code": true,
+        "online": true
     }
 ]

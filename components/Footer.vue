@@ -27,7 +27,7 @@ const randomEmoji = computed(() => {
     justify-content: space-between;
     align-items: center;
     margin-top: 120px!important;
-    padding: 40px 0;
+    padding: 40px 20px;
     font-size: 12px;
     border-top: solid 1px rgba(255,255,255,0.1);
 }

@@ -1,5 +1,9 @@
 <script setup>
 import codes from '~/assets/data/codes/radar.js';
+
+useHead({
+    title: "Eddy's Playground : Radar"
+})
 </script>
 
 <template>

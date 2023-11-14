@@ -1,5 +1,9 @@
 <script setup>
 import codes from '~/assets/data/codes/space-button.js';
+
+useHead({
+    title: "Eddy's Playground : Space Button"
+})
 </script>
 
 <template>

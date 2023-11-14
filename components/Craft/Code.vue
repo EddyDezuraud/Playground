@@ -20,7 +20,7 @@
             </div>
             <div :class="$style.codeInner">
                 <!-- <highlight-code lang="vue">{{ code }}</highlight-code> -->
-                <CodeBlock :code="code" :highlightjs="true" lang="html" />
+                <CodeBlock :code="code" :highlightjs="true" :lang="getLang" />
             </div>
         </div>
     </div>
@@ -38,6 +38,21 @@ const props = defineProps({
 
 const langSelected = ref('');
 const tabSelected = ref('');
+
+const getLang = computed(() => {
+    if (!currentLang.value || !currentLang.value.tabs) return '';
+    const index = currentLang.value?.tabs.findIndex((el) => el.label === tabSelected.value)
+    if (index > -1) {
+        if (currentLang.value.tabs[index].label.includes('.vue')) {
+            return 'html'
+        }
+        if (currentLang.value.tabs[index].label.includes('.css')) {
+            return 'css'
+        }
+        return 'js'
+    }
+    return '';
+})
 
 const currentLang = computed(() => {
     const index = props.codes?.findIndex((el) => el.lang === langSelected.value)
