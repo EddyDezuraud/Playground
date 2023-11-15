@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+      meta: [{ hid: 'og:image', property: 'og:image', content: '/Og-image.png' }]
     }
   },
   css: [
