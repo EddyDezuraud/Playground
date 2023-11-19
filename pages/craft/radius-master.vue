@@ -47,9 +47,12 @@ onMounted(() => {
                     <img src="~/assets/images/radius-master/logo-large.svg" alt="">
                 </div>
             </header>
-            <RadiusMasterView :class="$style.view" :inner="inner" :padding="padding" :outer="outer" />
+            <div :class="$style.wrapperItems">
+                <RadiusMasterView :class="$style.view" :inner="inner" :padding="padding" :outer="outer" />
             <RadiusMasterSliders :class="$style.sliders" :inner="inner" :padding="padding" :outer="outer"
                 @inner="onChangeInner" @outer="onChangeOuter" @padding="onChangePadding" />
+            </div>
+           
         </div>
 
     </div>
@@ -84,10 +87,12 @@ onMounted(() => {
     pointer-events: none;
 }
 
-.inner {
+
+.wrapperItems {
     display: flex;
     align-items: center;
     gap: 40px;
+    padding-top: 120px;
 }
 
 .header {
