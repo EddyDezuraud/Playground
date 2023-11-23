@@ -55,7 +55,7 @@ html {
 
 body, html {
     height: auto;
-    width: 100%;
+    max-width: 100vw;
 }
 
 body {
