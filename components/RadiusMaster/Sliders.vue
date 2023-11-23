@@ -50,8 +50,8 @@ watch(() => props.padding, (newVal) => {
 <template>
     <div :class="$style.wrapper">
         <RadiusMasterInput @change="onChange('outer', localOuter)" v-model="localOuter" label="Outer" color="#FF1D53" />
-        <RadiusMasterInput @change="onChange('inner', localInner)" v-model="localInner" label="Inner" color="#9674E2" />
         <RadiusMasterInput @change="onChange('padding', localPadding)" v-model="localPadding" label="Padding" color="#96FF43" />
+        <RadiusMasterInput @change="onChange('inner', localInner)" v-model="localInner" label="Inner" color="#9674E2" />
     </div>
 </template>
 
