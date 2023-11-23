@@ -52,6 +52,12 @@ onMounted(() => {
             <RadiusMasterSliders :class="$style.sliders" :inner="inner" :padding="padding" :outer="outer"
                 @inner="onChangeInner" @outer="onChangeOuter" @padding="onChangePadding" />
             </div>
+
+            <div :class="$style.codeInfo">
+                <span :class="$style.outerColor">--outer-radius</span>: {{ outer }}px<br/>
+                <span :class="$style.paddingColor">--outer-padding</span>: {{ padding }}px<br/>
+                <span :class="$style.innerColor">--inner-radius</span>: calc(var(<span :class="$style.outerColor">--outer-radius</span>) - var(<span :class="$style.paddingColor">--outer-padding</span>));
+            </div> 
            
         </div>
 
@@ -88,6 +94,7 @@ onMounted(() => {
 }
 
 
+
 .wrapperItems {
     display: flex;
     align-items: center;
@@ -112,6 +119,7 @@ onMounted(() => {
     font-weight: 700;
 }
 
+.codeInfo,
 .logo,
 .view,
 .sliders {
@@ -132,8 +140,40 @@ onMounted(() => {
     height: 35px;
 }
 
+.codeInfo {
+    position: relative;
+    margin: 0px auto;
+    max-width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 500;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+}
+
+
+.outerColor {
+    color: #FF1D53;   
+    font-weight: 700;
+}
+
+.paddingColor {
+    color: rgb(150, 255, 67);
+    font-weight: 700;
+}
+
+.innerColor {
+    color: rgb(150, 116, 226);   
+    font-weight: 700;
+}
+
 @media screen and (max-width: 1000px) {
-    .inner {
+    .wrapperItems {
         flex-direction: column;
     }
 }
