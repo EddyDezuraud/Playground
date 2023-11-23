@@ -157,4 +157,10 @@ const insideInnerStyle = computed(() => {
     border-bottom-left-radius: 3px;
     z-index: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .outer {
+        width: 300px;
+    }
+}
 </style>

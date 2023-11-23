@@ -50,7 +50,8 @@ watch(() => props.padding, (newVal) => {
 <template>
     <div :class="$style.wrapper">
         <RadiusMasterInput @change="onChange('outer', localOuter)" v-model="localOuter" label="Outer" color="#FF1D53" />
-        <RadiusMasterInput @change="onChange('padding', localPadding)" v-model="localPadding" label="Padding" color="#96FF43" />
+        <RadiusMasterInput @change="onChange('padding', localPadding)" v-model="localPadding" label="Padding"
+            color="#96FF43" />
         <RadiusMasterInput @change="onChange('inner', localInner)" v-model="localInner" label="Inner" color="#9674E2" />
     </div>
 </template>
@@ -66,5 +67,11 @@ watch(() => props.padding, (newVal) => {
     background: linear-gradient(rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
     padding: 20px 20px 0px;
     width: 400px;
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        width: 300px;
+    }
 }
 </style>
