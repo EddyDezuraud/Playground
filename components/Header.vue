@@ -86,14 +86,14 @@ watch(() => route.path, () => {
 .wrapper {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 99999;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: backdrop-filter 0.3s;
+    left: 10px;
+    width: calc(100% - 20px);
 }
 
 .blur .inner {
