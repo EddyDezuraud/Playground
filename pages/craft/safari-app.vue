@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 150px 20px;
+    padding: 190px 20px;
     border-radius: 12px;
     background: hsla(0, 0%, 0%, 0.2);
     background: linear-gradient(360deg, rgb(19, 10, 29), rgb(15, 13, 27));

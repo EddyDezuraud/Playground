@@ -1,5 +1,13 @@
 [
     {
+        "link": "safari-app",
+        "picture": "safari-app.png",
+        "video": "safari-app.mp4",
+        "title": "Safari App Icon",
+        "date": "11/28/2023 14:25",
+        "online": true
+    },
+    {
         "link": "radius-master",
         "picture": "radius-master.png",
         "video": "radius-master-2.mp4",
