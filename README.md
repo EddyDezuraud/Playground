@@ -1,8 +1,8 @@
-# CraftHub
+# Playground
 
-Welcome to CraftHub! 🎨✨
+Welcome to Playground! 🎨✨
 
-CraftHub is a playground for developers and designers, where creativity meets code. Dive into a fusion of development and design UI experiments, explore innovative techniques, and showcase your creativity.
+Playground is a playground for developers and designers, where creativity meets code. Dive into a fusion of development and design UI experiments, explore innovative techniques, and showcase your creativity.
 
 ## About Playground
 
