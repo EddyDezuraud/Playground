@@ -1,75 +1,19 @@
-# Nuxt 3 Minimal Starter
+# CraftHub
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to CraftHub! 🎨✨
 
-## Setup
+CraftHub is a playground for developers and designers, where creativity meets code. Dive into a fusion of development and design UI experiments, explore innovative techniques, and showcase your creativity.
 
-Make sure to install the dependencies:
+## About Playground
 
-```bash
-# npm
-npm install
+[Playground](https://playground.eddydezuraud.com) is the ultimate destination for developers and designers seeking inspiration and innovation. Here, we experiment with cutting-edge technologies, push the boundaries of design, and share our passion for creativity.
 
-# pnpm
-pnpm install
+## Features
 
-# yarn
-yarn install
+- **Inspiring Experiments**: Discover a curated collection of development and design experiments to spark your creativity.
+- **Innovative Techniques**: Explore new techniques, frameworks, and tools through our engaging projects and tutorials.
 
-# bun
-bun install
-```
+## Get Inspired
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1. **Explore**: Dive into our projects and experiments on [Playground](https://playground.eddydezuraud.com).
+2. **Stay Updated**: Follow us on social media to stay updated with the latest experiments, tutorials, and community news.
